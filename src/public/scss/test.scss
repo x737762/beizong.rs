@@ -1,0 +1,108 @@
+// --light: #c7ffed;
+// --dark: #012030;
+// --secondary: #3ca6a6;
+// --hover: #022f46;
+// --success: #67c23a;
+// --warning: #e6563c;
+// --danger: #f56c6c;
+// --error: #f56c6c;
+// --info: #0fc2c0;
+
+// $namespace: 'el' !default;
+// $common-separator: '-' !default;
+// $element-separator: '__' !default;
+// $state-prefix: 'is-' !default;
+
+@use 'sass:map';
+@use 'sass:math';
+
+$types: primary, success, warning, danger, error, info;
+
+$separator: '--' !default;
+$namespace: 'eici' !default;
+
+$colors: (
+  'black': #012030,
+  'white': #c7ffed,
+  'primary': (
+    'base': #409eff,
+  ),
+  'success': (
+    'base': #67c23a,
+  ),
+  'warning': (
+    'base': #e6a23c,
+  ),
+  'danger': (
+    'base': #f56c6c,
+  ),
+  'error': (
+    'base': #f56c6c,
+  ),
+  'info': (
+    'base': #909399,
+  ),
+);
+
+$color-white: map-get($colors, 'white');
+
+@mixin set-color-level(
+  $type,
+  $number,
+  $mode: 'light',
+  $max-color: $color-white
+) {
+  $colors: map.deep-merge(
+    (
+      $type: (
+        '#{$mode}-#{$number}':
+          mix(
+            $max-color,
+            map-get($colors, $type, 'base'),
+            math.percentage(math.div($number, 10))
+          ),
+      ),
+    ),
+    $colors
+  ) !global;
+}
+
+@function joinVarName($list) {
+  $name: $separator + $namespace;
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+
+@mixin set-css-var-value($name, $value) {
+  // @warn $value;
+  #{joinVarName($name)}: #{$value};
+}
+
+@mixin set-css-color-type($colors, $type) {
+  @include set-css-var-value(('color', $type), map-get($colors, $type, 'base'));
+  @each $i in (3, 5, 7, 8, 9) {
+    @include set-css-var-value(
+      ('color', $type, 'light', $i),
+      map-get($colors, $type, 'light-#{$i}')
+    );
+  }
+}
+
+@each $type in $types {
+  @for $i from 1 through 9 {
+    @include set-color-level($type, $i);
+  }
+}
+
+:root {
+  @each $type in $types {
+    @for $i from 1 through 9 {
+      @include set-color-level($type, $i);
+    }
+    @include set-css-color-type($colors, $type);
+  }
+}
