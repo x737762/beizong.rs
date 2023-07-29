@@ -1,0 +1,221 @@
+@charset "UTF-8";
+:root {
+  --beizong-color-white: #c7ffed;
+  --beizong-color-black: #012030;
+  --beizong-color-primary: #012e40;
+  --beizong-color-primary-light-3: #3c6d74;
+  --beizong-color-primary-light-5: #649797;
+  --beizong-color-primary-light-7: #8cc0b9;
+  --beizong-color-primary-light-8: #9fd5ca;
+  --beizong-color-primary-light-9: #b3eadc;
+  --beizong-color-success: #67c23a;
+  --beizong-color-success-light-3: #84d470;
+  --beizong-color-success-light-5: #97e194;
+  --beizong-color-success-light-7: #aaedb7;
+  --beizong-color-success-light-8: #b4f3c9;
+  --beizong-color-success-light-9: #bdf9db;
+  --beizong-color-warning: #e6a23c;
+  --beizong-color-warning-light-3: #ddbe71;
+  --beizong-color-warning-light-5: #d7d195;
+  --beizong-color-warning-light-7: #d0e3b8;
+  --beizong-color-warning-light-8: #cdecca;
+  --beizong-color-warning-light-9: #caf6db;
+  --beizong-color-danger: #f56c6c;
+  --beizong-color-danger-light-3: #e79893;
+  --beizong-color-danger-light-5: #deb6ad;
+  --beizong-color-danger-light-7: #d5d3c6;
+  --beizong-color-danger-light-8: #d0e2d3;
+  --beizong-color-danger-light-9: #ccf0e0;
+  --beizong-color-error: #f56c6c;
+  --beizong-color-error-light-3: #e79893;
+  --beizong-color-error-light-5: #deb6ad;
+  --beizong-color-error-light-7: #d5d3c6;
+  --beizong-color-error-light-8: #d0e2d3;
+  --beizong-color-error-light-9: #ccf0e0;
+  --beizong-color-info: #909399;
+  --beizong-color-info-light-3: #a1b3b2;
+  --beizong-color-info-light-5: #acc9c3;
+  --beizong-color-info-light-7: #b7dfd4;
+  --beizong-color-info-light-8: #bce9dc;
+  --beizong-color-info-light-9: #c2f4e5;
+  --beizong-text-color: #303133;
+  --beizong-text-color-black: #012030;
+  --beizong-text-color-white: #c7ffed;
+  --beizong-text-color-primary: #303133;
+  --beizong-text-color-regular: #606266;
+  --beizong-text-color-secondary: #909399;
+  --beizong-text-color-placeholder: #a8abb2;
+  --beizong-text-color-disabled: #c0c4cc;
+  --beizong-bg-color-white: var(--beizong-color-white);
+  --beizong-bg-color-black: var(--beizong-color-black);
+  --beizong-border-width: 1px;
+  --beizong-border-style: solid;
+  --beizong-border-color-white: var(--beizong-color-white);
+  --beizong-border-color-black: var(--beizong-color-black);
+  --beizong-border-radius-base: 8px;
+  --beizong-border-radius-small: 4px;
+  --beizong-border-radius-round: 20px;
+  --beizong-border-radius-circle: 100%;
+  --beizong-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08);
+  --beizong-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  --beizong-box-shadow-lighter: 0px 0px 6px rgba(0, 0, 0, 0.12);
+  --beizong-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12), 0px 8px 16px -8px rgba(0, 0, 0, 0.16);
+  --beizong-font-size-base: 16px;
+  --beizong-font-size-small: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  border: none;
+}
+
+ol,
+ul,
+dl,
+li {
+  list-style: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  background: transparent;
+}
+
+/* 整根滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* 滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: var(--beizong-color-primary);
+  border-radius: 6px;
+}
+
+/* 轨道 */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* 垂直和水平交汇处 */
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--beizong-color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1080px;
+}
+body nav {
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: var(--beizong-border-width) var(--beizong-border-style) var(--beizong-border-color-black);
+}
+body nav .nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  height: 100%;
+}
+body nav .menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+body nav .menu li {
+  padding: 10px 20px;
+}
+body nav .menu li a {
+  color: var(--beizong-text-color-black);
+}
+body nav .menu li:hover {
+  background-color: var(--beizong-bg-color-black);
+}
+body nav .menu li:hover a {
+  color: var(--beizong-text-color-white);
+}
+body .container {
+  display: grid;
+  width: 100%;
+  height: calc(100vh - 60px);
+  grid-template-columns: repeat(auto-fit, minmax(360px, 360px));
+  grid-template-rows: repeat(auto-fit, 200px);
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+body .container .article-item {
+  display: flex;
+  overflow: hidden;
+  border-radius: var(--beizong-border-radius-base);
+  box-shadow: var(--beizong-box-shadow);
+  color: var(--beizong-text-color-black);
+  box-sizing: border-box;
+  padding: 16px;
+}
+body .container .article-item:hover {
+  box-shadow: var(--beizong-box-shadow-dark);
+}
+body .container .article-item img {
+  flex: 0 0 120px;
+  margin-right: 20px;
+  height: 100%;
+}
+body .container .article-item .content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .container .article-item h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+body .container .article-item .desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-indent: 2em;
+}
+body .container .article-item .time {
+  font-size: var(--beizong-font-size-small);
+  color: var(--beizong-text-color-secondary);
+  text-align: right;
+}/*# sourceMappingURL=index.min.css.map */

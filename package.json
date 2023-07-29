@@ -1,7 +1,7 @@
 {
-  "name": "eici",
+  "name": "beizong.rs",
   "version": "1.0.0",
-  "description": "eici wiki系统",
+  "description": "beizong.rs",
   "main": "index.js",
   "type": "module",
   "scripts": {

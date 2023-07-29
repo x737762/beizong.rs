@@ -1,0 +1,22 @@
+@use 'config' as *;
+
+// joinVarName(('button', 'text-color')) => '--beizong-button-text-color'
+@function joinVarName($list) {
+  $name: $separator + $namespace;
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+
+// getCssVarName('button', 'text-color') => '--beizong-button-text-color'
+@function getCssVarName($args...) {
+  @return joinVarName(($args));
+}
+
+// getCssVar('button', 'text-color') => var(--beizong-button-text-color)
+@function getCssVar($args...) {
+  @return var(#{joinVarName($args)});
+}

@@ -1,0 +1,101 @@
+@use 'var' as *;
+@use 'mixin' as *;
+@use 'function' as *;
+
+:root {
+  @include set-css-var-value('color-white', $color-white);
+  @include set-css-var-value('color-black', $color-black);
+
+  @each $type in $types {
+    @include set-css-color-type($colors, $type);
+  }
+
+  @each $name, $value in $text-color {
+    @warn $name,$value;
+    @include set-css-var-value(('text-color', $name), $value);
+  }
+  @each $name, $value in $bg-color {
+    @warn $name,$value;
+    @include set-css-var-value(('bg-color', $name), $value);
+  }
+
+  // 边框
+  @include set-css-var-value('border-width', $border-width);
+  @include set-css-var-value('border-style', $border-style);
+  @each $name, $value in $border-color {
+    @warn $name,$value;
+    @include set-css-var-value(('border-color', $name), $value);
+  }
+  @each $name, $value in $border-radius {
+    @warn $name,$value;
+    @include set-css-var-value(('border-radius', $name), $value);
+  }
+
+  // 阴影
+  @each $name, $value in $box-shadow {
+    @warn $name,$value;
+    @include set-css-var-value(('box-shadow', $name), $value);
+  }
+  // 文字
+  @each $name, $value in $font-size {
+    @warn $name,$value;
+    @include set-css-var-value(('font-size', $name), $value);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  border: none;
+}
+
+ol,
+ul,
+dl,
+li {
+  list-style: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  background: transparent;
+}
+
+/* 整根滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/* 滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: getCssVar('color-primary');
+  border-radius: 6px;
+}
+
+/* 轨道 */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* 垂直和水平交汇处 */
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
