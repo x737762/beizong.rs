@@ -3,38 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="/css/index.min.css" />
+    <link rel="stylesheet" href="/css/nav.min.css">
+    <% if(module === 'home' ) { %>
+      <link rel="stylesheet" href="/css/home.min.css">
+    <% } %>
+    <% if(module === 'wiki' ) { %>
+      <link rel="stylesheet" href="/css/wiki.min.css">
+    <% } %>
     <title>Document</title>
   </head>
+
   <body>
-    <nav>
-      <div class="nav-container">
-        <div class="logo"></div>
-        <ul class="menu">
-          <li><a href="">首页</a></li>
-          <li><a href="">Wiki</a></li>
-          <li><a href="">关于</a></li>
-        </u>
-      </div>
-    </nav>
-    <main class="container">
-      <a class="article-item">
-        <img src="" alt="">
-        <div class="content">
-          <h2>标题标题标题标</h2>
-          <p class="desc">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
-          <p class="time">2023-09-09 09:09:09</p>
-        </div>
-      </a>
-      <a class="article-item"></a>
-      <a class="article-item"></a>
-      <a class="article-item"></a>
-      <a class="article-item"></a>
-      <a class="article-item"></a>
-      <a class="article-item"></a>
-      <a class="article-item"></a>
-    </main>
-    <!-- <script src="/javaScript/bootstrap.bundle.min.js"></script> -->
+    <%- include('./nav', menuList) %>
+    <% if(module === 'home' ) { %>
+      <%- include('./home', articleList) %>
+    <% } %>
+    <% if(module === 'wiki' ) { %>
+      <%- include('./wiki') %>
+    <% } %>
   </body>
 </html>

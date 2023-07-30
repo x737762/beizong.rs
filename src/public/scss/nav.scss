@@ -1,0 +1,42 @@
+@use './common/function' as *;
+
+nav {
+  height: 60px;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-bottom: getCssVar('border-width') getCssVar('border-style')
+    getCssVar('border-color', 'black');
+  .nav-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    li {
+      height: 100%;
+      padding: 0 2px;
+      a {
+        line-height: 60px;
+        padding: 10px 20px 12px;
+        color: getCssVar('text-color', 'black');
+        border-radius: getCssVar('border-radius', 'small');
+        &:hover {
+          background-color: getCssVar('bg-color', 'black');
+          color: getCssVar('text-color', 'white');
+        }
+      }
+    }
+    .menu-active {
+      background-color: getCssVar('bg-color', 'black');
+      color: getCssVar('text-color', 'white');
+    }
+  }
+}

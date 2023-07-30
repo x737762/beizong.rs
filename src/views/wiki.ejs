@@ -1,0 +1,78 @@
+<div class="wiki">
+  <aside>
+    <ul>
+      <% category.forEach(item=> { %>
+        <li>
+          <% if(item.isOpen) { %>
+            <p class="category" data-isOpen="true"="">
+              <%= item.label %>
+            </p>
+          <% } else { %>
+            <p class="category">
+              <%= item.label %>
+            </p>
+          <% } %>
+          <ul class="sub-category" style="height: 0;">
+            <% item.children.forEach(el=> { %>
+              <li>
+                <% if(el.isActive) { %>
+                  <a class="article-title isActive" href="/wiki/<%= el.uid %>">
+                    <%= el.label %>
+                  </a>
+                <% } else { %>
+                  <a class="article-title" href="/wiki/<%= el.uid %>">
+                    <%= el.label %>
+                  </a>
+                <% } %>
+              </li>
+              <% }) %>
+          </ul>
+        </li>
+        <% }) %>
+    </ul>
+  </aside>
+  <main>
+
+  </main>
+</div>
+
+<script>
+  const category = document.querySelectorAll('.category')
+
+  category.forEach(el => {
+    const open = el.getAttribute('data-isOpen')
+    if (open && open === 'true') {
+      el.nextElementSibling.setAttribute('style', `height: ${el.nextElementSibling.scrollHeight}px;`)
+    } else {
+      el.setAttribute('data-isOpen', 'false')
+    }
+    el.addEventListener('click', () => {
+      const isOpen = el.getAttribute('data-isOpen')
+      const subCategory = el.nextElementSibling
+      if (isOpen === 'false') {
+        el.setAttribute('data-isOpen', 'true')
+        subCategory.classList = 'sub-category is-open'
+        subCategory.setAttribute('style', `height: ${subCategory.scrollHeight}px;`)
+      } else {
+        el.setAttribute('data-isOpen', 'false')
+        subCategory.setAttribute('style', 'height: 0;')
+      }
+    })
+  })
+
+  // const articleList = document.querySelectorAll('.article-title')
+  // articleList.forEach(item => {
+  //   item.classList = 'article-title'
+  //   item.addEventListener('click', async (e) => {
+  //     e.stopPropagation();
+  //     e.preventDefault();
+  //     articleList.forEach(el => {
+  //       el.classList = 'article-title'
+  //     })
+  //     item.classList = 'article-title isActive'
+  //     await fetch(`http://localhost:8090/api/article/${e.target.getAttribute('data-id')}`).then(response => response.json())
+  //       .then(data => console.log(123, data));
+  //   })
+  // })
+
+</script>

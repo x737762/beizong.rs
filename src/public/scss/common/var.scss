@@ -159,6 +159,7 @@ $box-shadow: map.merge(
 $font-size: () !default;
 $font-size: map.merge(
   (
+    'big': 20px,
     'base': 16px,
     'small': 14px,
   ),

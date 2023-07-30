@@ -1,0 +1,14 @@
+<nav>
+  <div class="nav-container">
+    <div class="logo"></div>
+    <ul class="menu">
+      <% menuList.forEach(item=> { %> <% if(item.isActive) { %>
+      <li>
+        <a class="menu-active" href="<%= item.url %>"><%= item.name %></a>
+      </li>
+      <% } else { %>
+        <li><a href="<%= item.url %>"><%= item.name %></a></li>
+      <% } %> <% }); %>
+    </ul>
+  </div>
+</nav>

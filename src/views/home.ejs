@@ -1,0 +1,17 @@
+<main class="container">
+  <% articleList.forEach(item=> { %>
+  <a class="article-item" href="/article/<%= item.uid %>?type=<%= item.type %>">
+    <% if(item.cover) { %>
+    <img src="<%= item.cover %>" alt="" />
+    <% } %>
+    <div class="content">
+      <h2><%= item.title %></h2>
+      <p class="desc"><%= item.describe %></p>
+      <div class="info">
+        <p><%= item.views %></p>
+        <p><%= item.updateTime %></p>
+      </div>
+    </div>
+  </a>
+  <% }); %>
+</main>

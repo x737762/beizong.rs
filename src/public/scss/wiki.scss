@@ -1,0 +1,46 @@
+@use './common/function' as *;
+
+.wiki {
+  width: 100%;
+  height: calc(100% - 60px);
+  display: flex;
+  aside {
+    flex: 0 0 220px;
+    height: 100%;
+    border-right: getCssVar('border-width') getCssVar('border-style')
+      getCssVar('border-color', 'black');
+    overflow-x: hidden;
+    overflow-y: overlay;
+    box-sizing: border-box;
+    padding: 20px;
+    li > ul a {
+      color: getCssVar('text-color', 'black');
+      display: block;
+      padding: 5px 0 5px 20px;
+      border-radius: getCssVar('border-radius', 'small');
+      &:hover {
+        background-color: getCssVar('bg-color', 'black');
+        color: getCssVar('text-color', 'white');
+      }
+    }
+    .isActive {
+      background-color: getCssVar('bg-color', 'black');
+      color: getCssVar('text-color', 'white');
+    }
+    .category {
+      padding: 5px 0;
+      font-size: getCssVar('font-size', 'big');
+      cursor: pointer;
+    }
+    .sub-category {
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+  }
+  main {
+    padding: 20px 40px;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    box-sizing: border-box;
+  }
+}
