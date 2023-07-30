@@ -1,0 +1,45 @@
+@use './common/init' as *;
+@use './common/function' as *;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: getCssVar('color-white');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 1080px;
+  .login {
+    width: 380px;
+    border-radius: getCssVar('border-radius', 'base');
+    box-shadow: getCssVar('box-shadow', 'dark');
+    color: getCssVar('text-color', 'black');
+    box-sizing: border-box;
+    padding: 16px 16px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      margin-bottom: 20px;
+    }
+    input {
+      border-radius: getCssVar('border-radius', 'base');
+      border: getCssVar('border-width') getCssVar('border-style')
+        getCssVar('border-color', 'black');
+      padding: 10px 5px;
+      margin-bottom: 20px;
+      width: 220px;
+      box-sizing: border-box;
+    }
+    button {
+      display: block;
+      width: 220px;
+      padding: 10px 5px;
+      border-radius: getCssVar('border-radius', 'base');
+      background-color: getCssVar('bg-color', 'black');
+      color: getCssVar('text-color', 'white');
+    }
+  }
+}

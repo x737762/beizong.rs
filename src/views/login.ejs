@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/login.min.css">
+  <link rel="stylesheet" href="/css/login.min.css">
+  <title>登录</title>
+</head>
+
+<body>
+  <div class="login">
+    <h2>登 录</h2>
+    <input type="text" id="userName" value="" name="userName" placeholder="请输入用户名" required>
+    <input type="password" id="password" value="" name="password" placeholder="请输入用户密码" required>
+    <button class="submit">登 录</button>
+  </div>
+  <script>
+    const btn = document.querySelector('.submit')
+    btn.addEventListener('click', () => {
+      const userName = document.querySelector('#userName')
+      const password = document.querySelector('#password')
+      if (!userName || !password) {
+        return
+      }
+      fetch('http://localhost:8090/admin/api/login', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userName: userName.value, password: password.value })
+      }).then(response => response.json()).then(data => {
+        if (data.code === 200) {
+          sessionStorage.setItem('token', data.token)
+          location.href = `/admin?token=${data.token}`
+        } else {
+          alert(data.message)
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
