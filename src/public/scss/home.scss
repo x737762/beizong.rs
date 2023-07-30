@@ -50,15 +50,10 @@
       -webkit-box-orient: vertical;
       text-indent: 2em;
     }
-    .info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .time {
       font-size: getCssVar('font-size', 'small');
       color: getCssVar('text-color', 'secondary');
-      p {
-        white-space: nowrap;
-      }
+      text-align: right;
     }
   }
 }

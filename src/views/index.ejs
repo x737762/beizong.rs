@@ -11,6 +11,9 @@
     <% if(module === 'wiki' ) { %>
       <link rel="stylesheet" href="/css/wiki.min.css">
     <% } %>
+    <% if(module === 'memo' ) { %>
+      <link rel="stylesheet" href="/css/memo.min.css">
+    <% } %>
     <title>Document</title>
   </head>
 
@@ -21,6 +24,9 @@
     <% } %>
     <% if(module === 'wiki' ) { %>
       <%- include('./wiki') %>
+    <% } %>
+    <% if(module === 'memo' ) { %>
+      <%- include('./memo') %>
     <% } %>
   </body>
 </html>

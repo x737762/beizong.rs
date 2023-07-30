@@ -1,0 +1,33 @@
+@use './common/function' as *;
+
+.memo {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-y: overlay;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px 0;
+  .memo-item {
+    width: 860px;
+    border-radius: getCssVar('border-radius', 'base');
+    box-shadow: getCssVar('box-shadow');
+    color: getCssVar('text-color', 'black');
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 30px;
+    &:hover {
+      box-shadow: getCssVar('box-shadow', 'dark');
+    }
+    .content {
+      text-indent: 2em;
+    }
+    .time {
+      font-size: getCssVar('font-size', 'small');
+      color: getCssVar('text-color', 'secondary');
+      text-align: right;
+      margin-top: 20px;
+    }
+  }
+}
