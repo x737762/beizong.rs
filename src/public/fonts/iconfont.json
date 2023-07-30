@@ -1,0 +1,184 @@
+{
+  "id": "4115033",
+  "name": "beizong.rs",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11372706",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e8b9",
+      "unicode_decimal": 59577
+    },
+    {
+      "icon_id": "217224",
+      "name": "windows",
+      "font_class": "windows",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "1160904",
+      "name": "social-javascript",
+      "font_class": "socialjavascript",
+      "unicode": "e898",
+      "unicode_decimal": 59544
+    },
+    {
+      "icon_id": "1261898",
+      "name": "linux",
+      "font_class": "linux",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "3876406",
+      "name": "css3",
+      "font_class": "css",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "3876577",
+      "name": "rust",
+      "font_class": "rust",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "4936982",
+      "name": "HTML5-fill",
+      "font_class": "HTML-fill",
+      "unicode": "e881",
+      "unicode_decimal": 59521
+    },
+    {
+      "icon_id": "5961392",
+      "name": "mysql",
+      "font_class": "mysql",
+      "unicode": "ec6d",
+      "unicode_decimal": 60525
+    },
+    {
+      "icon_id": "11124972",
+      "name": "自定义",
+      "font_class": "18",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "12600931",
+      "name": "ts",
+      "font_class": "ts",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "13303937",
+      "name": "powershell",
+      "font_class": "powershell",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "13592648",
+      "name": "cloudshell 云命令行",
+      "font_class": "cloudshellyunminglinghang",
+      "unicode": "e6e4",
+      "unicode_decimal": 59108
+    },
+    {
+      "icon_id": "13744032",
+      "name": "vue",
+      "font_class": "vue",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "15188337",
+      "name": "docker",
+      "font_class": "docker",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "15378529",
+      "name": "kubernetes",
+      "font_class": "kubernetes",
+      "unicode": "ebee",
+      "unicode_decimal": 60398
+    },
+    {
+      "icon_id": "15378713",
+      "name": "proxmox",
+      "font_class": "proxmox",
+      "unicode": "ec63",
+      "unicode_decimal": 60515
+    },
+    {
+      "icon_id": "15378735",
+      "name": "react",
+      "font_class": "react",
+      "unicode": "ec77",
+      "unicode_decimal": 60535
+    },
+    {
+      "icon_id": "15378745",
+      "name": "redis",
+      "font_class": "redis",
+      "unicode": "ec7c",
+      "unicode_decimal": 60540
+    },
+    {
+      "icon_id": "15378753",
+      "name": "rollup-dot-js",
+      "font_class": "rollup-dot-js",
+      "unicode": "ec81",
+      "unicode_decimal": 60545
+    },
+    {
+      "icon_id": "15378947",
+      "name": "webpack",
+      "font_class": "webpack",
+      "unicode": "ed0b",
+      "unicode_decimal": 60683
+    },
+    {
+      "icon_id": "27365193",
+      "name": "node-js",
+      "font_class": "node-js",
+      "unicode": "ec12",
+      "unicode_decimal": 60434
+    },
+    {
+      "icon_id": "122690",
+      "name": "Category",
+      "font_class": "category",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "135538",
+      "name": "clock",
+      "font_class": "clock",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "204017",
+      "name": "discount",
+      "font_class": "discount",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "221461",
+      "name": "browse",
+      "font_class": "browse",
+      "unicode": "e6e6",
+      "unicode_decimal": 59110
+    }
+  ]
+}

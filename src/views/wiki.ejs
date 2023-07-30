@@ -32,7 +32,11 @@
     </ul>
   </aside>
   <main>
-
+    <% if(article) { %>
+      <%= article.content %>
+    <% } else { %>
+      <%- include('./noContent') %>
+    <% } %>
   </main>
 </div>
 

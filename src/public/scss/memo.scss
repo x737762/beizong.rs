@@ -28,6 +28,10 @@
       color: getCssVar('text-color', 'secondary');
       text-align: right;
       margin-top: 20px;
+      .icon-clock {
+        margin-right: 10px;
+        font-weight: bold;
+      }
     }
   }
 }

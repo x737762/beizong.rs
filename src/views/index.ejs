@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/index.min.css" />
     <link rel="stylesheet" href="/css/nav.min.css">
+    <link rel="stylesheet" href="/fonts/iconfont.css">
     <% if(module === 'home' ) { %>
       <link rel="stylesheet" href="/css/home.min.css">
     <% } %>
@@ -14,19 +15,25 @@
     <% if(module === 'memo' ) { %>
       <link rel="stylesheet" href="/css/memo.min.css">
     <% } %>
+    <% if(module === 'about' ) { %>
+      <link rel="stylesheet" href="/css/about.min.css">
+    <% } %>
     <title>Document</title>
   </head>
 
   <body>
     <%- include('./nav', menuList) %>
     <% if(module === 'home' ) { %>
-      <%- include('./home', articleList) %>
+      <%- include('./home') %>
     <% } %>
     <% if(module === 'wiki' ) { %>
       <%- include('./wiki') %>
     <% } %>
     <% if(module === 'memo' ) { %>
       <%- include('./memo') %>
+    <% } %>
+    <% if(module === 'about' ) { %>
+      <%- include('./about') %>
     <% } %>
   </body>
 </html>

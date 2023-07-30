@@ -1,0 +1,8 @@
+@use './common/function' as *;
+
+.about {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-y: overlay;
+  text-align: center;
+}

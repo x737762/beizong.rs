@@ -54,6 +54,10 @@
       font-size: getCssVar('font-size', 'small');
       color: getCssVar('text-color', 'secondary');
       text-align: right;
+      .icon-clock {
+        margin-right: 10px;
+        font-weight: bold;
+      }
     }
   }
 }
