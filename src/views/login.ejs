@@ -32,8 +32,8 @@
         body: JSON.stringify({ userName: userName.value, password: password.value })
       }).then(response => response.json()).then(data => {
         if (data.code === 200) {
-          sessionStorage.setItem('token', data.token)
-          location.href = `/admin?token=${data.token}`
+          // sessionStorage.setItem('token', data.token)
+          location.href = `/admin?menuId=1&token=${data.token}`
         } else {
           alert(data.message)
         }

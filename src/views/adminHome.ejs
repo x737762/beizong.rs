@@ -1,1 +1,83 @@
-<h2>adminHome</h2>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/adminHome.min.css">
+  <% if(menuId === '1' ) { %>
+    <link rel="stylesheet" href="/css/settingHome.min.css">
+  <% } %>
+  <% if(menuId === '2' ) { %>
+    <link rel="stylesheet" href="/css/settingArticle.min.css">
+  <% } %>
+  <% if(menuId === '3' ) { %>
+    <link rel="stylesheet" href="/css/settingMeno.min.css">
+  <% } %>
+  <% if(menuId === '4' ) { %>
+    <link rel="stylesheet" href="/css/settingType.min.css">
+  <% } %>
+  <% if(menuId === '5' ) { %>
+    <link rel="stylesheet" href="/css/settingMenu.min.css">
+  <% } %>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo"></div>
+    </div>
+  </nav>
+  <main class="main">
+    <ul class="menu">
+      <% list.forEach( (item) => { %>
+        <% if(item.id === menuId) { %>
+          <li class="isActive" data-id="<%= item.id %>"><%= item.name %></li>
+        <% } else { %>
+          <li data-id="<%= item.id %>"><%= item.name %></li>
+        <% } %>
+      <% }); %>
+    </ul>
+    <div class="content">
+      <% if(menuId === '1' ) { %>
+        <%- include('./settingHome') %>
+      <% } %>
+      <% if(menuId === '2' ) { %>
+        <%- include('./settingArticle') %>
+      <% } %>
+      <% if(menuId === '3' ) { %>
+        <%- include('./settingMeno') %>
+      <% } %>
+      <% if(menuId === '4' ) { %>
+        <%- include('./settingType') %>
+      <% } %>
+      <% if(menuId === '5' ) { %>
+        <%- include('./settingMenu') %>
+      <% } %>
+    </div>
+  </main>
+  <script>
+    const menuList = document.querySelectorAll('.menu > li')
+
+    menuList.forEach(el => {
+      el.addEventListener('click', () => {
+        menuList.forEach(item => {
+          item.classList = ''
+        })
+        el.classList = 'isActive'
+        const id = el.getAttribute('data-id')
+        const { origin, pathname, search } = location
+        const kv = search.substr(1).split('&')
+        const params = {}
+        kv.forEach(item => {
+          const [key, value] = item.split('=')
+          params[key] = value
+        })
+        location.href = `${origin}${pathname}?menuId=${id}&token=${params.token}`
+      })
+    })
+  </script>
+</body>
+
+</html>
